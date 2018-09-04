@@ -1,0 +1,219 @@
+___________________
+
+List of registered doctors
+___________________
+
+*******************
+ Dr Ben Casey
+	 id number: D1000
+	 Max Number of Patients: 3
+No patients assigned to this doctor as yet
+*******************
+ Dr Hawkeye Pierce
+	 id number: D1001
+	 Max Number of Patients: 4
+No patients assigned to this doctor as yet
+*******************
+ Dr Doogie Howser
+	 id number: D1002
+	 Max Number of Patients: 2
+No patients assigned to this doctor as yet
+
+
+___________________
+
+List of patients before doctors assigned
+___________________
+
+Private Patient - Fred Bear
+	 Identifier: P100000
+	 Preferred Doctor Ben Casey
+	 Private Health Fund Number: HCF236788
+	 Assigned Doctor: not assigned as yet
+
+Public Patient - Betty Davis
+	 Identifier: P100001
+	 Medicare Number: Medicare2562
+	 Assigned Doctor: not assigned as yet
+
+Private Patient - Bella Plant
+	 Identifier: P100002
+	 Preferred Doctor Ben Casey
+	 Private Health Fund Number: HCF265123
+	 Assigned Doctor: not assigned as yet
+
+Private Patient - Thomas Edison
+	 Identifier: P100003
+	 Preferred Doctor Doogie Howser
+	 Private Health Fund Number: HCF265988
+	 Assigned Doctor: not assigned as yet
+
+Public Patient - Chris Smith
+	 Identifier: P100004
+	 Medicare Number: Medicare5678
+	 Assigned Doctor: not assigned as yet
+
+Public Patient - Chris Jones
+	 Identifier: P100005
+	 Medicare Number: Medicare5679
+	 Assigned Doctor: not assigned as yet
+
+Public Patient - Chris Simpson
+	 Identifier: P100006
+	 Medicare Number: Medicare5690
+	 Assigned Doctor: not assigned as yet
+
+Public Patient - Chris Christoph
+	 Identifier: P100007
+	 Medicare Number: Medicare5878
+	 Assigned Doctor: not assigned as yet
+
+
+___________________
+
+ Assigning Doctors to Patients
+___________________
+Assigning a doctor to Fred Bear
+Assigning a doctor to Betty Davis
+Assigning a doctor to Bella Plant
+Assigning a doctor to Thomas Edison
+Assigning a doctor to Chris Smith
+Assigning a doctor to Chris Jones
+Assigning a doctor to Chris Simpson
+Assigning a doctor to Chris Christoph
+
+___________________
+
+List of patients after doctors assigned
+___________________
+Private Patient - Fred Bear
+	 Identifier: P100000
+	 Preferred Doctor Ben Casey
+	 Private Health Fund Number: HCF236788
+	 Assigned Doctor: Ben Casey
+	 Fee for consultation = $1000.0
+
+Public Patient - Betty Davis
+	 Identifier: P100001
+	 Medicare Number: Medicare2562
+	 Assigned Doctor: Ben Casey
+	 Fee for consultation = $700.0
+
+Private Patient - Bella Plant
+	 Identifier: P100002
+	 Preferred Doctor Ben Casey
+	 Private Health Fund Number: HCF265123
+	 Assigned Doctor: Ben Casey
+	 Fee for consultation = $2300.0
+
+Private Patient - Thomas Edison
+	 Identifier: P100003
+	 Preferred Doctor Doogie Howser
+	 Private Health Fund Number: HCF265988
+	 Assigned Doctor: Doogie Howser
+	 Fee for consultation = $300.0
+
+Public Patient - Chris Smith
+	 Identifier: P100004
+	 Medicare Number: Medicare5678
+	 Assigned Doctor: Hawkeye Pierce
+	 Fee for consultation = $100.0
+
+Public Patient - Chris Jones
+	 Identifier: P100005
+	 Medicare Number: Medicare5679
+	 Assigned Doctor: Hawkeye Pierce
+	 Fee for consultation = $100.0
+
+Public Patient - Chris Simpson
+	 Identifier: P100006
+	 Medicare Number: Medicare5690
+	 Assigned Doctor: Hawkeye Pierce
+	 Fee for consultation = $100.0
+
+Public Patient - Chris Christoph
+	 Identifier: P100007
+	 Medicare Number: Medicare5878
+	 Assigned Doctor: Hawkeye Pierce
+	 Fee for consultation = $100.0
+
+___________________
+
+List of doctors after patients assigned
+___________________
+
+*******************
+ Dr Ben Casey
+	 id number: D1000
+	 Max Number of Patients: 3
+
+List of Patients for Dr Ben Casey
+
+Private Patient - Fred Bear
+	 Identifier: P100000
+	 Preferred Doctor Ben Casey
+	 Private Health Fund Number: HCF236788
+	 Assigned Doctor: Ben Casey
+	 Fee for consultation = $1000.0
+
+Public Patient - Betty Davis
+	 Identifier: P100001
+	 Medicare Number: Medicare2562
+	 Assigned Doctor: Ben Casey
+	 Fee for consultation = $700.0
+
+Private Patient - Bella Plant
+	 Identifier: P100002
+	 Preferred Doctor Ben Casey
+	 Private Health Fund Number: HCF265123
+	 Assigned Doctor: Ben Casey
+	 Fee for consultation = $2300.0
+
+
+*******************
+ Dr Hawkeye Pierce
+	 id number: D1001
+	 Max Number of Patients: 4
+
+List of Patients for Dr Hawkeye Pierce
+
+Public Patient - Chris Smith
+	 Identifier: P100004
+	 Medicare Number: Medicare5678
+	 Assigned Doctor: Hawkeye Pierce
+	 Fee for consultation = $100.0
+
+Public Patient - Chris Jones
+	 Identifier: P100005
+	 Medicare Number: Medicare5679
+	 Assigned Doctor: Hawkeye Pierce
+	 Fee for consultation = $100.0
+
+Public Patient - Chris Simpson
+	 Identifier: P100006
+	 Medicare Number: Medicare5690
+	 Assigned Doctor: Hawkeye Pierce
+	 Fee for consultation = $100.0
+
+Public Patient - Chris Christoph
+	 Identifier: P100007
+	 Medicare Number: Medicare5878
+	 Assigned Doctor: Hawkeye Pierce
+	 Fee for consultation = $100.0
+
+
+*******************
+ Dr Doogie Howser
+	 id number: D1002
+	 Max Number of Patients: 2
+
+List of Patients for Dr Doogie Howser
+
+Private Patient - Thomas Edison
+	 Identifier: P100003
+	 Preferred Doctor Doogie Howser
+	 Private Health Fund Number: HCF265988
+	 Assigned Doctor: Doogie Howser
+	 Fee for consultation = $300.0
+
+

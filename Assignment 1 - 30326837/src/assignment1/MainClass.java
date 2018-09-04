@@ -1,8 +1,13 @@
 package assignment1;
 
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.File;
+import java.io.FileReader;
+import java.io.BufferedReader;
+
 
 public class MainClass {
 	
@@ -19,10 +24,35 @@ public class MainClass {
 		
 		System.out.println(outputString);
 		
-	    BufferedWriter writer = new BufferedWriter(new FileWriter(OUTPUT_FILE));
+	    BufferedWriter writer = new BufferedWriter(new FileWriter(TEST_FILE));
 	    writer.write(outputString);
 	    writer.close();
-	    	    
+	    
+	   
+	    
+	    BufferedReader txtOut = new BufferedReader(new FileReader(OUTPUT_FILE));
+	    BufferedReader txtRef = new BufferedReader(new FileReader(TEST_FILE));
+	    
+	   // Analyze each line characters for parity //
+	    while(txtOut.ready() && txtRef.ready()) {
+	    	String x = txtOut.readLine();         						
+	    	String y = txtRef.readLine(); 
+	    	if(x.contains(y)) System.out.println("istrue");
+	    	else System.out.println("nottrue");
+	    	
+	    	
+	    	
+	    }
+	    
+	   
+	    
+	    
+	    
+	    
+	    txtOut.close();
+	    txtRef.close();
+	   
+	    
 	}
 
 }
