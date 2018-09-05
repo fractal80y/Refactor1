@@ -34,18 +34,20 @@ public class MainClass {
 	    BufferedReader txtRef = new BufferedReader(new FileReader(TEST_FILE));
 	    
 	   // Analyze each line characters for parity //
-	    while(txtOut.ready() && txtRef.ready()) {
-	    	String x = txtOut.readLine();         						
-	    	String y = txtRef.readLine(); 
-	    	if(x.contains(y)) System.out.println("istrue");
-	    	else System.out.println("nottrue");
-	    	
-	    	
-	    	
+	    
+	    String stringOut = "";
+	    String stringRef = "";
+	    
+	    while(txtOut.ready()) {
+	    	 stringOut += txtOut.readLine();         						
 	    }
 	    
+	    while(txtRef.ready()) {
+	    	 stringRef += txtRef.readLine();
+	    }
 	   
-	    
+	    if(stringOut.contains(stringRef)) System.out.println("istrue");
+    	else System.out.println("nottrue");
 	    
 	    
 	    
