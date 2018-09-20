@@ -33,7 +33,7 @@ public class MainClass {
 	    BufferedReader txtOut = new BufferedReader(new FileReader(OUTPUT_FILE));
 	    BufferedReader txtRef = new BufferedReader(new FileReader(TEST_FILE));
 	    
-	   // Analyze each line characters for parity //
+	   // Analyze each file characters for parity //
 	    
 	    String stringOut = "";
 	    String stringRef = "";
@@ -46,8 +46,8 @@ public class MainClass {
 	    	 stringRef += txtRef.readLine();
 	    }
 	   
-	    if(stringOut.contains(stringRef)) System.out.println("istrue");
-    	else System.out.println("nottrue");
+	    if(stringOut.contains(stringRef)) System.out.println("*****DOCUMENT OUTPUT MATCHES********");
+    	else System.out.println("*******DOCUMENT OUTPUT MATCH FAIL*********");
 	    
 	    
 	    

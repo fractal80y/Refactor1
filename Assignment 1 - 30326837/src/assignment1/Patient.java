@@ -5,7 +5,7 @@ import java.util.*;
 public class Patient
 {
 	private Doctor assignedDoctor; // Doctor assigned to Patient
-	private static int pIdNo = 100000; // No get and set methods - internal use only
+	private static int patientIDnumber = 100000; // No get and set methods - internal use only
 	private String name;
 	private int age;
 	private String identifier;
@@ -15,7 +15,7 @@ public class Patient
 	private String medicareNo;
 	private int hoursTreated; // No of hours patient treated by Doctor
 
-	public final String getName(){
+	public String getName(){
 		return name;
 	}
 	
@@ -46,7 +46,7 @@ public class Patient
 		if (patientType.equals("Private")){
 			for (int i = 0; i < listOfDoctors.size(); i++){
 				Doctor temp = (Doctor)listOfDoctors.get(i);
-				if (this.preferredDoctor.equals(temp.name)){
+				if (this.preferredDoctor.equals(temp.getName())){
 					assignedDoctor = temp;
 					return (temp.assignPatientToDoctorsList(this));
 				}
@@ -84,7 +84,7 @@ public class Patient
 	}
 
 	public final void SetIdentifier(){
-		this.identifier = "P" + pIdNo++;
+		this.identifier = "P" + patientIDnumber++;
 	}
 
 	
@@ -97,7 +97,7 @@ public class Patient
 				temp2 = "not assigned as yet";
 			}
 			else{
-				temp2 = this.assignedDoctor.name + "\n\t Fee for consultation = $" + this.hoursTreated * this.assignedDoctor.getHourlyRate();
+				temp2 = this.assignedDoctor.getName() + "\n\t Fee for consultation = $" + this.hoursTreated * this.assignedDoctor.getHourlyRate();
 			}
 			return temp + temp2 + "\n";
 		}
@@ -109,7 +109,7 @@ public class Patient
 				temp2 = "not assigned as yet";
 			}
 			else{
-				temp2 = this.assignedDoctor.name + "\n\t Fee for consultation = $" + this.hoursTreated * this.assignedDoctor.getHourlyRate();
+				temp2 = this.assignedDoctor.getName() + "\n\t Fee for consultation = $" + this.hoursTreated * this.assignedDoctor.getHourlyRate();
 			}
 			return temp + temp2 + "\n";
 		}

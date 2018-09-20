@@ -17,40 +17,14 @@ public class Hospital
 	public final String run(){
 		String output = "";
 
-		this.listOfDoctors.add(new Doctor("Ben Casey", 32, 3, "Ear, Nose, Throat"));
-		this.listOfDoctors.add(new Doctor("Hawkeye Pierce", 47, 4, "Heart"));
-		this.listOfDoctors.add(new Doctor("Doogie Howser", 22, 2, "Paediatrician", 150));
+		addListofDoctors();
+		setListOfPatients();
 
-		output += "___________________\n\nList of registered doctors\n___________________\n\n";
-		for (int i = 0; i < this.listOfDoctors.size(); i++){
-			Doctor temp = ((Doctor)this.listOfDoctors.get(i));
-			output += temp.toString() + "\n";
-			if (temp.HasPatients()){
-				output += temp.printListOfPatients();
-			}
-			else{
-				output += "No patients assigned to this doctor as yet";
-			}
-			output += "\n";
-		}
+		output = returnListOfregisteredDoctors(output);
 
-		output += "\n";
+		
 
-		this.listOfPatients.clear();
-
-		this.listOfPatients.add(this.listOfPatients.size(), new Patient("Fred Bear", 29, "Private", "Ben Casey", "HCF236788", 10));
-		this.listOfPatients.add(this.listOfPatients.size(), new Patient("Betty Davis", 37, "Medicare2562", "Public", 7));
-		this.listOfPatients.add(this.listOfPatients.size(), new Patient("Bella Plant", 25, "Private", "Ben Casey", "HCF265123", 23));
-		this.listOfPatients.add(this.listOfPatients.size(), new Patient("Thomas Edison", 12, "Private", "Doogie Howser", "HCF265988", 2));
-		this.listOfPatients.add(this.listOfPatients.size(), new Patient("Chris Smith", 56, "Medicare5678", "Public", 1));
-		this.listOfPatients.add(this.listOfPatients.size(), new Patient("Chris Jones", 56, "Medicare5679", "Public", 1));
-		this.listOfPatients.add(this.listOfPatients.size(), new Patient("Chris Simpson", 56, "Medicare5690", "Public", 1));
-		this.listOfPatients.add(this.listOfPatients.size(), new Patient("Chris Christoph", 56, "Medicare5878", "Public", 1));
-
-		output += "\n___________________\n\nList of patients before doctors assigned\n___________________\n\n";
-		for (int i = 0; i < this.listOfPatients.size(); i++){
-			output += ((Patient)this.listOfPatients.get(i)).toString() + "\n";
-		}
+		output = returnListofPatitentsBefore(output);
 
 		output += "\n___________________\n\n Assigning Doctors to Patients\n___________________\n";
 		ArrayList<Patient> list = this.listOfPatients;
@@ -84,5 +58,50 @@ public class Hospital
 		}
 		
 		return output;
+	}
+
+	private String returnListofPatitentsBefore(String output) {
+		output += "\n___________________\n\nList of patients before doctors assigned\n___________________\n\n";
+		for (int i = 0; i < this.listOfPatients.size(); i++){
+			output += ((Patient)this.listOfPatients.get(i)).toString() + "\n";
+		}
+		return output;
+	}
+
+	private String returnListOfregisteredDoctors(String output) {
+		output += "___________________\n\nList of registered doctors\n___________________\n\n";
+		for (int i = 0; i < this.listOfDoctors.size(); i++){
+			Doctor temp = ((Doctor)this.listOfDoctors.get(i));
+			output += temp.toString() + "\n";
+			if (temp.HasPatients()){
+				output += temp.printListOfPatients();
+			}
+			else{
+				output += "No patients assigned to this doctor as yet";
+			}
+			output += "\n";
+		}
+
+		output += "\n";
+		return output;
+	}
+
+	private void setListOfPatients() {
+		this.listOfPatients.clear();
+
+		this.listOfPatients.add(this.listOfPatients.size(), new Patient("Fred Bear", 29, "Private", "Ben Casey", "HCF236788", 10));
+		this.listOfPatients.add(this.listOfPatients.size(), new Patient("Betty Davis", 37, "Medicare2562", "Public", 7));
+		this.listOfPatients.add(this.listOfPatients.size(), new Patient("Bella Plant", 25, "Private", "Ben Casey", "HCF265123", 23));
+		this.listOfPatients.add(this.listOfPatients.size(), new Patient("Thomas Edison", 12, "Private", "Doogie Howser", "HCF265988", 2));
+		this.listOfPatients.add(this.listOfPatients.size(), new Patient("Chris Smith", 56, "Medicare5678", "Public", 1));
+		this.listOfPatients.add(this.listOfPatients.size(), new Patient("Chris Jones", 56, "Medicare5679", "Public", 1));
+		this.listOfPatients.add(this.listOfPatients.size(), new Patient("Chris Simpson", 56, "Medicare5690", "Public", 1));
+		this.listOfPatients.add(this.listOfPatients.size(), new Patient("Chris Christoph", 56, "Medicare5878", "Public", 1));
+	}
+
+	private void addListofDoctors() {
+		this.listOfDoctors.add(new Doctor("Ben Casey", 32, 3, "Ear, Nose, Throat"));
+		this.listOfDoctors.add(new Doctor("Hawkeye Pierce", 47, 4, "Heart"));
+		this.listOfDoctors.add(new Doctor("Doogie Howser", 22, 2, "Paediatrician", 150));
 	}
 }

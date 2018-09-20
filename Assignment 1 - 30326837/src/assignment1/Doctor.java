@@ -8,13 +8,17 @@ public class Doctor
 	private ArrayList<Patient> listOfPatients; // Doctor's personal list of patients
 	private int maxNumOfPatients; // Maximum no. of patients a Dr can have at one time
 	private double hourlyRate; // Hourly rate of pay
-	private static int drIdNo = 1000; // Internal use only - no get/set methods
-	public String name;
+	private static int doctorID = 1000; // Internal use only - no get/set methods
+	private String name;
 	private int age;
 	private String identifier;
 
 	public final boolean HasPatients(){
 		return !listOfPatients.isEmpty();
+	}
+	
+	public String getName() {
+		return this.name;
 	}
 
 	public Doctor(){
@@ -77,6 +81,6 @@ public class Doctor
 	}
 
 	public final void setIdentifier(){
-		this.identifier = "D" + drIdNo++;
+		this.identifier = "D" + doctorID++;
 	}
 }
