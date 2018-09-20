@@ -19,31 +19,32 @@ public class Patient
 		return name;
 	}
 	
-	private Patient() {
+	private Patient(String name, int age, String patientType, int hoursTreated) {
+		
+		this.name = name;
+		this.age = age;
+		assignedDoctor = null;
+		this.SetIdentifier();
+		this.patientType = patientType;
+		this.hoursTreated = hoursTreated;
 		
 	}
 	
 	public Patient(String name, int age, String medicareNo, String patientType, int hoursTreated){
-		this.name = name;
-		this.age = age;
-		assignedDoctor = null;
-		this.SetIdentifier();
-		this.patientType = patientType;
+		
+		this(name,age,patientType,hoursTreated);
 		this.preferredDoctor = null;
 		this.privateHealthFundNo = null;
 		this.medicareNo = medicareNo;
-		this.hoursTreated = hoursTreated;
+		
 	}
 
 	public Patient(String name, int age, String patientType, String preferredDoctor, String privateHealthFundNo, int hoursTreated){
-		this.name = name;
-		this.age = age;
-		assignedDoctor = null;
-		this.SetIdentifier();
-		this.patientType = patientType;
+		
+		this(name,age,patientType,hoursTreated);
 		this.preferredDoctor = preferredDoctor;
 		this.privateHealthFundNo = privateHealthFundNo;
-		this.hoursTreated = hoursTreated;
+		
 	}
 
 	public final boolean assignDoctor(ArrayList<Doctor> listOfDoctors){
@@ -96,26 +97,26 @@ public class Patient
 		if (patientType.equals("Public")){
 			String temp = "Public Patient - " + this.name + "\n\t Identifier: " + this.identifier + "\n\t Medicare Number: " + this.medicareNo + "\n\t Assigned Doctor: ";
 
-			String temp2;
+			
 			if (this.assignedDoctor == null){
-				temp2 = "not assigned as yet";
+				temp += "not assigned as yet";
 			}
 			else{
-				temp2 = this.assignedDoctor.getName() + "\n\t Fee for consultation = $" + this.hoursTreated * this.assignedDoctor.getHourlyRate();
+				temp += this.assignedDoctor.getName() + "\n\t Fee for consultation = $" + this.hoursTreated * this.assignedDoctor.getHourlyRate();
 			}
-			return temp + temp2 + "\n";
+			return temp + "\n";
 		}
 		else { //if (patientType == "Private")
 			String temp = "Private Patient - " + this.name + "\n\t Identifier: " + this.identifier + "\n\t Preferred Doctor " + this.preferredDoctor + "\n\t Private Health Fund Number: " + this.privateHealthFundNo +
 						  "\n\t Assigned Doctor: ";
-			String temp2;
+			
 			if (this.assignedDoctor == null){
-				temp2 = "not assigned as yet";
+				temp += "not assigned as yet";
 			}
 			else{
-				temp2 = this.assignedDoctor.getName() + "\n\t Fee for consultation = $" + this.hoursTreated * this.assignedDoctor.getHourlyRate();
+				temp += this.assignedDoctor.getName() + "\n\t Fee for consultation = $" + this.hoursTreated * this.assignedDoctor.getHourlyRate();
 			}
-			return temp + temp2 + "\n";
+			return temp + "\n";
 		}
 	}
 }

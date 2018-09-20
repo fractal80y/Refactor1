@@ -21,15 +21,7 @@ public class Doctor
 		return this.name;
 	}
 
-	public Doctor(){
-		specialisation = "Unknown";
 
-		listOfPatients = new ArrayList<Patient>();
-		listOfPatients.clear();
-		maxNumOfPatients = 0;
-		hourlyRate = 100;
-		this.setIdentifier();
-	}
 
 	public Doctor(String name, int age, int patients2, String specialisation){
 		this.name = name;
