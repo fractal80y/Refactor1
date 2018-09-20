@@ -60,7 +60,7 @@ public class Hospital
 			Patient temp = (Patient)list.get(i);
 			if (temp.assignDoctor(this.listOfDoctors) == false){
 				output += "\n*******************\n Cannot assign patient to " + temp.getName() + "- No available doctors\n*******************\n";
-				output += ((Patient)list.get(i)).mv();
+				output += temp.mv();
 			}
 			else{
 				output += "Assigning a doctor to " + temp.getName() + "\n";
@@ -68,6 +68,8 @@ public class Hospital
 		}
 		return output;
 	}
+	
+	
 
 	private String returnListofPatitentsBefore(String output) {
 		output += "\n___________________\n\nList of patients before doctors assigned\n___________________\n\n";

@@ -57,7 +57,7 @@ public class Doctor
 
 	public final boolean assignPatientToDoctorsList(Patient pt){
 		if (listOfPatients.size() < this.maxNumOfPatients){
-			listOfPatients.add(listOfPatients.size(),pt);
+			listOfPatients.add(pt);
 			return true;
 		}
 		return false;
@@ -75,4 +75,6 @@ public class Doctor
 	public final void setIdentifier(){
 		this.identifier = "D" + doctorID++;
 	}
+	
+	
 }
