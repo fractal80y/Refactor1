@@ -19,6 +19,10 @@ public class Patient
 		return name;
 	}
 	
+	private Patient() {
+		
+	}
+	
 	public Patient(String name, int age, String medicareNo, String patientType, int hoursTreated){
 		this.name = name;
 		this.age = age;
